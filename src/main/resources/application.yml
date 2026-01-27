@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-sms-feign-project
+
+# Solapi 설정
+solapi:
+  api-key: ${SOLAPI_API_KEY:your-api-key}
+  api-secret: ${SOLAPI_API_SECRET:your-api-secret}
+  sender-phone: ${SOLAPI_SENDER_PHONE:01012345678}
+  api-url: https://api.solapi.com
+
+# SMS 인증 설정
+sms:
+  verification:
+    expiry-minutes: 3
+    code-length: 6
+
+# Feign 설정
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 5000
+        read-timeout: 5000
+        logger-level: full
+
+# 로깅 설정
+logging:
+  level:
+    com.example.sms: DEBUG
+    com.example.sms.client: DEBUG
+
+# Swagger 설정
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
