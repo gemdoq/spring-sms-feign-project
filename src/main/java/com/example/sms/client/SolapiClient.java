@@ -14,6 +14,6 @@ import java.util.Map;
 )
 public interface SolapiClient {
 
-    @PostMapping("/messages/v4/send")
+    @PostMapping("/messages/v4/send-many/detail")
     Map<String, Object> sendMessage(@RequestBody SolapiRequestDTO request);
 }
